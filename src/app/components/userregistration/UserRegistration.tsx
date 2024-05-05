@@ -4,6 +4,7 @@ import { SubmitButton } from '../../common/components/presentational/buttons/Sub
 import { createControlledFormInput } from '../../common/components/presentational/factories/createControlledFormInput';
 import { TextInput, TextInputProps } from '../../common/components/presentational/input/TextInput';
 import { useUserStore } from '../../stores/userStore';
+import { tw } from '../../utils/tw';
 import { defaultValues, resolver, UserSchema } from './userSchema';
 
 const ControlledFormTextInput = createControlledFormInput<TextInputProps, UserSchema>(TextInput, {
@@ -35,7 +36,7 @@ export const UserRegistration = () => {
   );
 
   const classes = {
-    inline: 'flex gap-5'
+    inline: tw`flex gap-5`
   };
 
   return (
