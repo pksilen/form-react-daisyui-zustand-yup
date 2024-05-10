@@ -1,12 +1,12 @@
 import React from 'react';
 
-export type TextInputProps = {
+export type TextInputProps = Readonly<{
   className?: string;
   error?: string | null | undefined;
   label?: string;
   maxLength?: number | undefined;
   required?: boolean;
-};
+}>;
 
 export const TextInput = React.forwardRef(
   ({ className, error, label, maxLength, required, ...restOfProps }: TextInputProps, ref) => (
@@ -15,7 +15,7 @@ export const TextInput = React.forwardRef(
         <span className="label-text">{`${label}${required ? ' *' : ''}`}</span>
       </div>
       <input
-        className={`input input-bordered w-full ${error ? ' input-error' : ''}`}
+        className={`input input-bordered w-full${error ? ' input-error' : ''}`}
         maxLength={maxLength}
         type="text"
         {...restOfProps}
