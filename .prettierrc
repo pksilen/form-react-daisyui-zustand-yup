@@ -1,10 +1,9 @@
 {
   "printWidth": 100,
-  "plugins": [
-    "prettier-plugin-organize-imports",
-    "prettier-plugin-tailwindcss"
-  ],
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "singleQuote": true,
   "trailingComma": "none",
-  "tailwindFunctions": ["tw"]
+  "importOrder": ["^(!app).*$", "^app/", "^[\\.\\./]", "^[\\./]"],
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": true
 }
